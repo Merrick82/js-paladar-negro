@@ -14,3 +14,28 @@ console.log('Precio Reserva: ', result.reservationPrice);
 // Estos metodos estan en un js que carga el json y appendea el componente html que muestra cada opcion de menu
 loadMenuPlates();
 loadSpecialPlates();
+
+// Funcion sencilla con jquery que realiza un slide con los tipos de eventos a realizar en el restaurante
+$(function specialEventSlider() {
+    let changeSlideTime = 5000; 
+    let transitionSpeed = 600;
+
+    let simple_slideshow = $("#slideShow");
+    let listItems = simple_slideshow.children('div');
+    let listLen = listItems.length;
+    let i = 0;
+
+    changeList = function () {
+        listItems.eq(i).fadeOut(transitionSpeed, function () {
+            i += 1;
+            if (i === listLen) {
+                i = 0;
+            }
+
+            listItems.eq(i).fadeIn(transitionSpeed);
+        });
+    };
+
+    listItems.not(':first').hide();
+    setInterval(changeList, changeSlideTime);
+});
