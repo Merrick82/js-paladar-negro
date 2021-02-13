@@ -11,7 +11,8 @@ console.log('Fecha: ', result.date);
 console.log('Comensales: ', result.dinersQty);
 console.log('Precio Reserva: ', result.reservationPrice);
 
-// Estos metodos estan en un js que carga el json y appendea el componente html que muestra cada opcion de menu
+// Estos metodos estan en un js que carga el json que obtiene su data haciendo una llamada ajax a un 
+// backend hecho en nodejs y appendea el componente html que muestra cada opcion de menu
 loadMenuPlates();
 loadSpecialPlates();
 

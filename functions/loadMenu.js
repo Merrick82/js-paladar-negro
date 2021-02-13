@@ -1,11 +1,25 @@
 function loadMenuPlates() {
     let menuPlates = document.getElementById('menu-plates');
     
-    let menuItems = menu;
-    menuItems.forEach(menu => {
-        buildMenuItem(menu);
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8001/menu',
+        dataType: 'json',
+        success: function(data) {
+            if (data.length === 0) {
+                buildError();
+                return;
+            }
+
+            data.forEach(menu => {
+                buildMenuItem(menu);        
+            });
+        },
+        error: function(error) {
+            buildError();
+        }
     });
-    
+
     function buildMenuItem(menuItem) {
         menuPlates.innerHTML += `
         <div class="col-lg-6 menu-item ${menuItem.filterType}">
@@ -15,6 +29,14 @@ function loadMenuPlates() {
             <div class="menu-ingredients">
                 ${menuItem.ingridients}
             </div>
+        </div>
+        `;
+    }
+
+    function buildError() {
+        menuPlates.innerHTML = `
+        <div class="col-lg-12 menu-item">
+            <h2 style="text-align: center; color: red; padding-top: 5%;">No se pudo cargar el menu</h2>
         </div>
         `;
     }
