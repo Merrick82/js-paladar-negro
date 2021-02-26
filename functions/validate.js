@@ -1,3 +1,5 @@
+let months = [ 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'setiembre', 'octubre', 'noviembre', 'diciembre' ];
+
 const emailIsValid = email => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -39,7 +41,7 @@ function validate() {
         status = false;
         document.getElementById('error-day').innerHTML = "Por favor ingrese un dia";
         day.focus();
-    } else if (!days.includes(day.value)) {
+    } else if (day.value < 1 || day.value > 31) {
         status = false;
         document.getElementById('error-day').innerHTML = "Por favor ingrese un dia valido";
         day.focus();

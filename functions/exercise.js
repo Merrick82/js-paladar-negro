@@ -8,9 +8,6 @@ console.log('Fecha: ', result.date);
 console.log('Comensales: ', result.dinersQty);
 console.log('Precio Reserva: ', result.reservationPrice);
 
-let days = [ 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo' ];
-let months = [ 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'setiembre', 'octubre', 'noviembre', 'diciembre' ];
-
 // Metodo que invoca los metodos inicializadores
 initialize();
 

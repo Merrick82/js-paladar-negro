@@ -47,7 +47,7 @@ function searchBookedTable(nameToFind) {
                     </div>
                     <div class="col-lg-4 col-md-6 form-group">
                         <label for="founded-day">Dia</label>
-                        <input type="text" name="founded-day" class="form-control" id="founded-day" value="${resp.day}" disabled>
+                        <input type="number" name="founded-day" class="form-control" id="founded-day" value="${resp.day}" disabled>
                     </div>
                     <div class="col-lg-4 col-md-6 form-group">
                         <label for="founded-month">Mes</label>
