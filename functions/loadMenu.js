@@ -11,7 +11,9 @@ function loadMenuPlates() {
                 return;
             }
 
-            data.forEach(menu => {
+            let dataOrdered = data.sort((a, b) => a.order - b.order);
+
+            dataOrdered.forEach(menu => {
                 buildMenuItem(menu);        
             });
         },

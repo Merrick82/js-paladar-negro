@@ -115,6 +115,7 @@ jQuery(document).ready(function($) {
           this_form.find('.sent-message').slideDown();
           this_form.find("input:not(input[type=submit]), textarea").val('');
         } else {
+          console.log('LALALA', msg);
           this_form.find('.loading').slideUp();
           this_form.find('.error-message').slideDown().html(msg);
         }
